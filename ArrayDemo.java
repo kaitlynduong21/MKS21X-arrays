@@ -59,11 +59,11 @@ public class ArrayDemo {
     printArray(vals);
   }
 
-  /*public static int[][] fill2DCopy(int[][] vals){
+  public static int[][] fill2DCopy(int[][] vals){
     int[][] newArray;
     newArray = new int [vals.length][vals[0].length];
-    for(int n = 0; n < vals.length; n++) {
-      for(int i = 0; i < vals[n].length; i++) {
+    for(int n = 0; n < newArray.length; n++) {
+      for(int i = 0; i < newArray[n].length; i++) {
         if (vals[n][i] < 0) {
           newArray[n][i] = 3;
         } else {
@@ -72,7 +72,8 @@ public class ArrayDemo {
       }
     }
     printArray(newArray);
-  */
+    return newArray;
+  }
 
   public static void main(String[] args) {
     int[] anArray;
@@ -89,6 +90,7 @@ public class ArrayDemo {
     }
     printArray(anArray1);
     System.out.println("There are " + countZeros2D(anArray1) + " zeroes.");
-    //fill2D(anArray1);
+    fill2DCopy(anArray1);
+    fill2D(anArray1);
   }
 }
