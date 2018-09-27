@@ -9,7 +9,23 @@ public class ArrayDemo {
       System.out.print(ary[i]);
     }
   }
-    System.out.print("]");
+    System.out.println("]");
+  }
+
+  public static void printArray(int[][]ary){
+    for (int n = 0; n < ary.length; n++) {
+      for(int i = 0; i < (ary[0]).length; i++) {
+        if (i == 0) {
+          System.out.print("[" + ary[n][i] + ", ");
+        } else {
+          if (i == ary[n].length - 1) {
+            System.out.println(ary[n][i] + "]");
+          } else {
+            System.out.print(ary[n][i] + ", ");
+          }
+        }
+      }
+    }
   }
 
   public static void main(String[] args) {
@@ -19,5 +35,13 @@ public class ArrayDemo {
       anArray[i] = 100 + i * 10;
     }
     printArray(anArray);
+    int[][] anArray1;
+    anArray1 = new int [2][3];
+    for (int n = 0; n < anArray1.length; n++) {
+      for(int i = 0; i < anArray1[0].length; i++) {
+        anArray1[n][i] = (i + 1) * (n + 1);
+      }
+    }
+    printArray(anArray1);
   }
 }
