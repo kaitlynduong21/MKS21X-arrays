@@ -14,7 +14,7 @@ public class ArrayDemo {
 
   public static void printArray(int[][]ary){
     for (int n = 0; n < ary.length; n++) {
-      for(int i = 0; i < (ary[0]).length; i++) {
+      for(int i = 0; i < (ary[n]).length; i++) {
         if (i == 0) {
           System.out.print("[" + ary[n][i] + ", ");
         } else {
@@ -31,13 +31,26 @@ public class ArrayDemo {
   public static int countZeros2D(int[][] nums){
     int count = 0;
     for(int n = 0; n < nums.length; n++) {
-      for(int i = 0; i < nums[0].length; i++) {
+      for(int i = 0; i < nums[n].length; i++) {
         if (nums[n][i] == 0) {
           count++;
         }
       }
     }
     return count;
+  }
+
+  public static void fill2D(int[][] vals){
+    for(int n = 0; n < vals.length; n++) {
+      for(int i = 0; i < vals[n].length; i++) {
+        if (i == n) {
+          vals[n][i] = 3;
+        } else {
+          vals[n][i] = 1;
+        }
+      }
+    }
+    printArray(vals);
   }
 
 
@@ -52,10 +65,11 @@ public class ArrayDemo {
     anArray1 = new int [2][3];
     for (int n = 0; n < anArray1.length; n++) {
       for(int i = 0; i < anArray1[0].length; i++) {
-        anArray1[n][i] = (i) * (n + 1);
+        anArray1[n][i] = (i * 3 - 4) * (n + 1);
       }
     }
     printArray(anArray1);
     System.out.println("There are " + countZeros2D(anArray1) + " zeroes.");
+    fill2D(anArray1);
   }
 }
